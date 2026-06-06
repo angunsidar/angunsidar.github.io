@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Protocol: Rewire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d0d0f;
+      color: #e2e2e8;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header .app-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #6c63ff, #3ecfcf);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: #a0a0b8;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .lang-switch a {
+      padding: 6px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #c0c0d8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .lang-switch a:hover,
+    .lang-switch a.active {
+      background: rgba(108, 99, 255, 0.3);
+      border-color: #6c63ff;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* Language sections */
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(62, 207, 207, 0.08), rgba(108, 99, 255, 0.08));
+      border: 1px solid rgba(62, 207, 207, 0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .highlight-box .icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .highlight-box p {
+      color: #b8f0f0;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .highlight-box strong { color: #3ecfcf; }
+
+    /* Sections */
+    .section {
+      margin-bottom: 40px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      background: linear-gradient(135deg, #6c63ff, #3ecfcf);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #c0c0e0;
+      margin: 20px 0 10px;
+    }
+
+    .section p {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .section ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section ul li {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+      padding: 5px 0 5px 22px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-weight: 700;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+
+    .data-table th {
+      background: rgba(108, 99, 255, 0.15);
+      color: #c0c0e8;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .data-table td {
+      padding: 9px 14px;
+      color: #a0a0c0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .badge-local {
+      background: rgba(62, 207, 207, 0.15);
+      color: #3ecfcf;
+      border: 1px solid rgba(62, 207, 207, 0.3);
+    }
+
+    .badge-third {
+      background: rgba(255, 180, 50, 0.12);
+      color: #ffb432;
+      border: 1px solid rgba(255, 180, 50, 0.25);
+    }
+
+    .badge-no {
+      background: rgba(80, 200, 120, 0.12);
+      color: #50c878;
+      border: 1px solid rgba(80, 200, 120, 0.25);
+    }
+
+    /* Not collected grid */
+    .no-collect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .no-collect-item {
+      background: rgba(80, 200, 120, 0.07);
+      border: 1px solid rgba(80, 200, 120, 0.2);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+      color: #80d8a0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .no-collect-item::before {
+      content: "✕";
+      color: #50c878;
+      font-weight: 800;
+      font-size: 0.8rem;
+    }
+
+    /* Third party cards */
+    .third-party-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+
+    .third-party-card .name {
+      font-weight: 700;
+      color: #e0e0f0;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .third-party-card p { margin: 0 0 6px; font-size: 0.88rem; }
+
+    .third-party-card a {
+      color: #6c63ff;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    .third-party-card a:hover { text-decoration: underline; }
+
+    /* Contact */
+    .contact-box {
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .contact-box a {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #606080;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 540px) {
+      .section { padding: 20px 16px; }
+      header h1 { font-size: 1.5rem; }
+      .data-table { font-size: 0.82rem; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">🔗</div>
+  <h1>Protocol: Rewire</h1>
+  <p>Privacy Policy / Gizlilik Politikası</p>
+  <div class="lang-switch">
+    <a href="#" class="active" onclick="switchLang('en', this); return false;">English</a>
+    <a href="#" onclick="switchLang('tr', this); return false;">Türkçe</a>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ============================= ENGLISH ============================= -->
+  <div id="lang-en" class="lang-section visible">
+
+    <p style="color:#606080; font-size:0.85rem; margin-bottom:28px;">
+      <strong style="color:#a0a0c0;">Last updated:</strong> June 6, 2026
+    </p>
+
+    <div class="highlight-box">
+      <div class="icon">🔒</div>
+      <p>
+        <strong>Your data never leaves your device.</strong> Protocol: Rewire stores all personal information — including sensitive habit and health data — exclusively on your device using Hive and SharedPreferences. There is <strong>no server, no cloud sync, no account required</strong>.
+      </p>
+    </div>
+
+    <!-- 1. About -->
+    <div class="section">
+      <h2><span class="num">1</span> About This Policy</h2>
+      <p>This Privacy Policy describes how <strong>Protocol: Rewire</strong> ("the App"), developed by <strong>Sidar Angun</strong>, handles information when you use our iOS application.</p>
+      <p>By downloading or using the App, you agree to the practices described in this policy. If you do not agree, please do not use the App.</p>
+    </div>
+
+    <!-- 2. Data We Store Locally -->
+    <div class="section">
+      <h2><span class="num">2</span> Data Stored Locally on Your Device</h2>
+      <p>All of the following data is stored <strong>only on your device</strong>. It is never transmitted to our servers or any third party (except as described in Section 4 for subscription management).</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Type</th>
+            <th>Purpose</th>
+            <th>Storage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Addiction types (smoking, alcohol, PMO, doomscrolling)</td>
+            <td>Track which habits you're working on</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>Streak &amp; check-in history</td>
+            <td>Progress tracking and motivation</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>Mood logs (mood tracking)</td>
+            <td>Emotional pattern awareness</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>Task completion records</td>
+            <td>Daily habit accountability</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>Urge / craving logs</td>
+            <td>Identify triggers and patterns</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>Weekly / monthly goals</td>
+            <td>Goal setting and progress</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>User-added motivational quotes</td>
+            <td>Personalized inspiration</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+          <tr>
+            <td>Notification preferences</td>
+            <td>Reminder settings</td>
+            <td><span class="badge badge-local">Local only</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Sensitive Health Data</h3>
+      <p>
+        Some categories of data you may enter — such as substance use, PMO habits, or mental health mood logs — are considered sensitive health information. This data is treated with the highest level of care:
+      </p>
+      <ul>
+        <li>Stored exclusively on your device (Hive database + SharedPreferences)</li>
+        <li>Never uploaded to any server, cloud service, or analytics platform</li>
+        <li>Never linked to your identity — the App has no accounts or sign-in</li>
+        <li>Permanently deleted when you uninstall the App</li>
+      </ul>
+
+      <h3>App Store Data Practices Label</h3>
+      <p>In Apple's Data &amp; Privacy framework, all data collected by Protocol: Rewire falls under <strong>"Data Not Linked to You"</strong> — meaning no data is associated with your Apple ID or any personal identifier. The only exception is purchase information processed through RevenueCat (see Section 4).</p>
+    </div>
+
+    <!-- 3. Data We Do NOT Collect -->
+    <div class="section">
+      <h2><span class="num">3</span> Data We Do NOT Collect</h2>
+      <p>Protocol: Rewire does not collect, store, or transmit any of the following:</p>
+      <div class="no-collect-grid">
+        <div class="no-collect-item">Name or username</div>
+        <div class="no-collect-item">Email address</div>
+        <div class="no-collect-item">Password</div>
+        <div class="no-collect-item">Location data</div>
+        <div class="no-collect-item">Camera access</div>
+        <div class="no-collect-item">Microphone access</div>
+        <div class="no-collect-item">Contacts</div>
+        <div class="no-collect-item">Crash analytics</div>
+        <div class="no-collect-item">Usage analytics</div>
+        <div class="no-collect-item">Advertising ID</div>
+        <div class="no-collect-item">IP address</div>
+        <div class="no-collect-item">Device identifiers</div>
+      </div>
+      <p style="margin-top:16px;">There is no Firebase Analytics, Mixpanel, Amplitude, Crashlytics, or any other analytics/telemetry SDK in this App.</p>
+    </div>
+
+    <!-- 4. Third-Party Services -->
+    <div class="section">
+      <h2><span class="num">4</span> Third-Party Services</h2>
+      <p>The App uses two third-party services solely for subscription and payment management:</p>
+
+      <div class="third-party-card">
+        <div class="name">RevenueCat — Subscription Management</div>
+        <p>RevenueCat is used to manage premium subscription status and validate in-app purchases. RevenueCat assigns an <strong>anonymous customer identifier</strong> to verify your subscription. This identifier does not contain any personally identifiable information.</p>
+        <p>RevenueCat may process: subscription status, purchase date, and product identifier. This data is used solely to unlock premium features — it is <strong>not used for advertising or profiling</strong>.</p>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy →</a>
+      </div>
+
+      <div class="third-party-card">
+        <div class="name">Apple In-App Purchase</div>
+        <p>All payments are processed directly by Apple via the App Store infrastructure. Protocol: Rewire never receives or stores your payment card details. Apple's handling of payment data is governed by Apple's own privacy policy.</p>
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy →</a>
+      </div>
+    </div>
+
+    <!-- 5. Local Storage & Data Deletion -->
+    <div class="section">
+      <h2><span class="num">5</span> Local Storage &amp; Data Deletion</h2>
+      <p>All app data is stored on-device using:</p>
+      <ul>
+        <li><strong>Hive</strong> — a lightweight NoSQL database stored in your app's sandbox</li>
+        <li><strong>SharedPreferences</strong> — for simple key-value settings and preferences</li>
+      </ul>
+      <p>Neither storage method sends data to external servers.</p>
+      <h3>Deleting Your Data</h3>
+      <ul>
+        <li>You can clear all app data at any time via iOS Settings → Protocol: Rewire → Reset Data</li>
+        <li>Uninstalling the App permanently removes all locally stored data from your device</li>
+        <li>RevenueCat anonymous customer data can be requested for deletion at <a href="mailto:angunsidar@gmail.com" style="color:#6c63ff;">angunsidar@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <!-- 6. Children's Privacy -->
+    <div class="section">
+      <h2><span class="num">6</span> Children's Privacy</h2>
+      <p>Protocol: Rewire is rated <strong>4+</strong> on the App Store. The App is designed for adults seeking to break harmful habits and is not directed at children under 13.</p>
+      <p>We do not knowingly collect any personal information from children under 13. If you believe a child has submitted personal information through the App, please contact us at <a href="mailto:angunsidar@gmail.com" style="color:#6c63ff;">angunsidar@gmail.com</a> and we will take steps to delete it.</p>
+    </div>
+
+    <!-- 7. Security -->
+    <div class="section">
+      <h2><span class="num">7</span> Security</h2>
+      <p>Because all sensitive data is stored locally on your device, the security of your information depends primarily on your device's own security features (passcode, Face ID, Touch ID). We strongly recommend keeping your device secured.</p>
+      <p>For the limited data processed by RevenueCat, that service implements industry-standard security measures. See their privacy policy for details.</p>
+    </div>
+
+    <!-- 8. Changes to This Policy -->
+    <div class="section">
+      <h2><span class="num">8</span> Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. For significant changes, we may also notify you through the App.</p>
+      <p>Continued use of the App after changes take effect constitutes your acceptance of the revised policy.</p>
+    </div>
+
+    <!-- 9. Contact -->
+    <div class="section">
+      <h2><span class="num">9</span> Contact</h2>
+      <div class="contact-box">
+        <p><strong>Sidar Angun</strong></p>
+        <p>Developer of Protocol: Rewire</p>
+        <p style="margin-top:8px;">Email: <a href="mailto:angunsidar@gmail.com">angunsidar@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /lang-en -->
+
+
+  <!-- ============================= TÜRKÇE ============================= -->
+  <div id="lang-tr" class="lang-section">
+
+    <p style="color:#606080; font-size:0.85rem; margin-bottom:28px;">
+      <strong style="color:#a0a0c0;">Son güncellenme:</strong> 6 Haziran 2026
+    </p>
+
+    <div class="highlight-box">
+      <div class="icon">🔒</div>
+      <p>
+        <strong>Verilerini asla cihazından çıkarmıyoruz.</strong> Protocol: Rewire, hassas alışkanlık ve sağlık verileri dahil tüm kişisel bilgilerini yalnızca cihazında Hive ve SharedPreferences kullanarak saklar. <strong>Sunucu yok, bulut senkronizasyonu yok, hesap gerekmez.</strong>
+      </p>
+    </div>
+
+    <!-- 1 -->
+    <div class="section">
+      <h2><span class="num">1</span> Bu Politika Hakkında</h2>
+      <p>Bu Gizlilik Politikası, <strong>Sidar Angun</strong> tarafından geliştirilen <strong>Protocol: Rewire</strong> uygulamasının ("Uygulama") iOS uygulamasını kullanırken bilgileri nasıl ele aldığını açıklar.</p>
+      <p>Uygulamayı indirerek veya kullanarak bu politikada açıklanan uygulamaları kabul etmiş olursun. Kabul etmiyorsan lütfen Uygulamayı kullanma.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <h2><span class="num">2</span> Cihazında Yerel Olarak Saklanan Veriler</h2>
+      <p>Aşağıdaki tüm veriler <strong>yalnızca cihazında</strong> saklanır. Hiçbir zaman sunucularımıza veya üçüncü bir tarafa iletilmez (abonelik yönetimi için Bölüm 4'te belirtilenler hariç).</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Veri Türü</th>
+            <th>Amaç</th>
+            <th>Depolama</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bağımlılık türleri (sigara, alkol, PMO, doomscrolling)</td>
+            <td>Üzerinde çalıştığın alışkanlıkları takip etme</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Streak ve check-in geçmişi</td>
+            <td>İlerleme takibi ve motivasyon</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Ruh hali logları (mood tracking)</td>
+            <td>Duygusal örüntü farkındalığı</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Görev tamamlama kayıtları</td>
+            <td>Günlük alışkanlık hesap verebilirliği</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Tehdit/istek günlükleri (urge/craving logları)</td>
+            <td>Tetikleyicileri ve örüntüleri tanımlama</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Haftalık/aylık hedefler</td>
+            <td>Hedef belirleme ve ilerleme</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Kullanıcı tarafından eklenen motivasyon alıntıları</td>
+            <td>Kişiselleştirilmiş ilham</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+          <tr>
+            <td>Bildirim tercihleri</td>
+            <td>Hatırlatma ayarları</td>
+            <td><span class="badge badge-local">Yalnızca yerel</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Hassas Sağlık Verileri</h3>
+      <p>
+        Madde kullanımı, PMO alışkanlıkları veya ruh hali logları gibi girebileceğin bazı veri kategorileri hassas sağlık bilgisi olarak değerlendirilir. Bu veriler en yüksek özen düzeyiyle işlenir:
+      </p>
+      <ul>
+        <li>Yalnızca cihazında saklanır (Hive veritabanı + SharedPreferences)</li>
+        <li>Hiçbir sunucu, bulut servisi veya analitik platformuna yüklenmez</li>
+        <li>Kimliğinle hiçbir şekilde ilişkilendirilmez — Uygulamanın hesabı veya girişi yoktur</li>
+        <li>Uygulamayı kaldırdığında kalıcı olarak silinir</li>
+      </ul>
+
+      <h3>App Store Veri Uygulamaları Etiketi</h3>
+      <p>Apple'ın Veri ve Gizlilik çerçevesinde, Protocol: Rewire tarafından toplanan tüm veriler <strong>"Sana Bağlı Olmayan Veriler"</strong> kapsamına girer — yani hiçbir veri Apple ID'nle veya herhangi bir kişisel tanımlayıcıyla ilişkilendirilmez. Tek istisna, RevenueCat aracılığıyla işlenen satın alma bilgisidir (bkz. Bölüm 4).</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+      <h2><span class="num">3</span> Toplamadığımız Veriler</h2>
+      <p>Protocol: Rewire aşağıdakilerin hiçbirini toplamaz, saklamaz veya iletmez:</p>
+      <div class="no-collect-grid">
+        <div class="no-collect-item">Ad veya kullanıcı adı</div>
+        <div class="no-collect-item">E-posta adresi</div>
+        <div class="no-collect-item">Şifre</div>
+        <div class="no-collect-item">Konum verisi</div>
+        <div class="no-collect-item">Kamera erişimi</div>
+        <div class="no-collect-item">Mikrofon erişimi</div>
+        <div class="no-collect-item">Kişiler</div>
+        <div class="no-collect-item">Çökme analitiği</div>
+        <div class="no-collect-item">Kullanım analitiği</div>
+        <div class="no-collect-item">Reklam kimliği</div>
+        <div class="no-collect-item">IP adresi</div>
+        <div class="no-collect-item">Cihaz tanımlayıcıları</div>
+      </div>
+      <p style="margin-top:16px;">Bu uygulamada Firebase Analytics, Mixpanel, Amplitude, Crashlytics veya herhangi başka bir analitik/telemetri SDK'sı bulunmamaktadır.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+      <h2><span class="num">4</span> Üçüncü Taraf Hizmetler</h2>
+      <p>Uygulama, yalnızca abonelik ve ödeme yönetimi için iki üçüncü taraf hizmet kullanır:</p>
+
+      <div class="third-party-card">
+        <div class="name">RevenueCat — Abonelik Yönetimi</div>
+        <p>RevenueCat, premium abonelik durumunu yönetmek ve uygulama içi satın almaları doğrulamak için kullanılır. RevenueCat, aboneliğini doğrulamak amacıyla <strong>anonim bir müşteri kimliği</strong> atar. Bu tanımlayıcı hiçbir kişisel tanımlanabilir bilgi içermez.</p>
+        <p>RevenueCat şunları işleyebilir: abonelik durumu, satın alma tarihi ve ürün tanımlayıcısı. Bu veriler yalnızca premium özelliklerin kilidini açmak için kullanılır — <strong>reklam veya profil oluşturma amacıyla kullanılmaz</strong>.</p>
+        <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Gizlilik Politikası →</a>
+      </div>
+
+      <div class="third-party-card">
+        <div class="name">Apple Uygulama İçi Satın Alma</div>
+        <p>Tüm ödemeler, App Store altyapısı aracılığıyla doğrudan Apple tarafından işlenir. Protocol: Rewire ödeme kartı bilgilerini hiçbir zaman almaz veya saklamaz. Apple'ın ödeme verilerini işlemesi Apple'ın kendi gizlilik politikasına tabidir.</p>
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Gizlilik Politikası →</a>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+      <h2><span class="num">5</span> Yerel Depolama ve Veri Silme</h2>
+      <p>Tüm uygulama verileri şunlar kullanılarak cihazında saklanır:</p>
+      <ul>
+        <li><strong>Hive</strong> — uygulama sanal alanında (sandbox) saklanan hafif bir NoSQL veritabanı</li>
+        <li><strong>SharedPreferences</strong> — basit anahtar-değer ayarları ve tercihler için</li>
+      </ul>
+      <p>Her iki depolama yöntemi de verileri harici sunuculara göndermez.</p>
+      <h3>Verilerini Silme</h3>
+      <ul>
+        <li>iOS Ayarlar → Protocol: Rewire → Verileri Sıfırla aracılığıyla tüm uygulama verilerini istediğin zaman silebilirsin</li>
+        <li>Uygulamayı kaldırmak, cihazında yerel olarak saklanan tüm verileri kalıcı olarak kaldırır</li>
+        <li>RevenueCat anonim müşteri verilerinin silinmesi için <a href="mailto:angunsidar@gmail.com" style="color:#6c63ff;">angunsidar@gmail.com</a> adresine talep gönderebilirsin</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+      <h2><span class="num">6</span> Çocukların Gizliliği</h2>
+      <p>Protocol: Rewire, App Store'da <strong>4+</strong> yaş derecelendirmesine sahiptir. Uygulama, zararlı alışkanlıkları kırmak isteyen yetişkinlere yönelik tasarlanmıştır ve 13 yaşın altındaki çocuklara yönelik değildir.</p>
+      <p>13 yaşın altındaki çocuklardan bilerek herhangi bir kişisel bilgi toplamıyoruz. Bir çocuğun Uygulama aracılığıyla kişisel bilgi gönderdiğine inanıyorsan, lütfen <a href="mailto:angunsidar@gmail.com" style="color:#6c63ff;">angunsidar@gmail.com</a> adresinden bizimle iletişime geç ve silmek için gerekli adımları atalım.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+      <h2><span class="num">7</span> Güvenlik</h2>
+      <p>Tüm hassas veriler cihazında yerel olarak saklandığından, bilgilerinin güvenliği öncelikle cihazının kendi güvenlik özelliklerine (şifre, Face ID, Touch ID) bağlıdır. Cihazını güvenli tutmanı şiddetle tavsiye ederiz.</p>
+      <p>RevenueCat tarafından işlenen sınırlı veriler için bu hizmet endüstri standardı güvenlik önlemlerini uygular. Ayrıntılar için gizlilik politikalarına bakabilirsin.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+      <h2><span class="num">8</span> Bu Politikadaki Değişiklikler</h2>
+      <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Güncellediğimizde, bu sayfanın en üstündeki "Son güncellenme" tarihini değiştireceğiz. Önemli değişiklikler için seni Uygulama üzerinden de bilgilendirebiliriz.</p>
+      <p>Değişiklikler yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmen, gözden geçirilmiş politikayı kabul ettiğin anlamına gelir.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section">
+      <h2><span class="num">9</span> İletişim</h2>
+      <div class="contact-box">
+        <p><strong>Sidar Angun</strong></p>
+        <p>Protocol: Rewire Geliştiricisi</p>
+        <p style="margin-top:8px;">E-posta: <a href="mailto:angunsidar@gmail.com">angunsidar@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /lang-tr -->
+
+</div><!-- /container -->
+
+<footer>
+  &copy; 2026 Sidar Angun — Protocol: Rewire
+</footer>
+
+<script>
+  function switchLang(lang, el) {
+    document.querySelectorAll('.lang-section').forEach(function(s) {
+      s.classList.remove('visible');
+    });
+    document.getElementById('lang-' + lang).classList.add('visible');
+    document.querySelectorAll('.lang-switch a').forEach(function(a) {
+      a.classList.remove('active');
+    });
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
