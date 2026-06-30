@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — Protocol: Rewire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d0d0f;
+      color: #e2e2e8;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header .app-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #6c63ff, #3ecfcf);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: #a0a0b8;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .lang-switch a {
+      padding: 6px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #c0c0d8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .lang-switch a:hover,
+    .lang-switch a.active {
+      background: rgba(108, 99, 255, 0.3);
+      border-color: #6c63ff;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* Language sections */
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(62, 207, 207, 0.08), rgba(108, 99, 255, 0.08));
+      border: 1px solid rgba(62, 207, 207, 0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .highlight-box .icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .highlight-box p {
+      color: #b8f0f0;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .highlight-box strong { color: #3ecfcf; }
+
+    /* Sections */
+    .section {
+      margin-bottom: 40px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 .num {
+      background: linear-gradient(135deg, #6c63ff, #3ecfcf);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #c0c0e0;
+      margin: 20px 0 10px;
+    }
+
+    .section p {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .section ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section ul li {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+      padding: 5px 0 5px 22px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-weight: 700;
+    }
+
+    /* Plan cards */
+    .plan-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+
+    .plan-card .name {
+      font-weight: 700;
+      color: #e0e0f0;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .plan-card p { margin: 0 0 6px; font-size: 0.88rem; }
+
+    /* Contact */
+    .contact-box {
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+
+    .contact-box a {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    a { color: #6c63ff; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #606080;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Responsive */
+    @media (max-width: 540px) {
+      .section { padding: 20px 16px; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">🔗</div>
+  <h1>Protocol: Rewire</h1>
+  <p>Terms of Use / Kullanım Koşulları</p>
+  <div class="lang-switch">
+    <a href="#" class="active" onclick="switchLang('en', this); return false;">English</a>
+    <a href="#" onclick="switchLang('tr', this); return false;">Türkçe</a>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ============================= ENGLISH ============================= -->
+  <div id="lang-en" class="lang-section visible">
+
+    <p style="color:#606080; font-size:0.85rem; margin-bottom:28px;">
+      <strong style="color:#a0a0c0;">Last updated:</strong> June 30, 2026
+    </p>
+
+    <div class="highlight-box">
+      <div class="icon">📜</div>
+      <p>
+        <strong>By downloading or using Protocol: Rewire, you agree to these Terms of Use</strong> and to
+        Apple's Standard End User License Agreement (EULA), which governs your use of this App.
+      </p>
+    </div>
+
+    <!-- 1 -->
+    <div class="section">
+      <h2><span class="num">1</span> Acceptance of Terms</h2>
+      <p>These Terms of Use ("Terms") form an agreement between you and <strong>Sidar Angun</strong> ("we," "us," "our"), the developer of <strong>Protocol: Rewire</strong> ("the App"). By downloading, installing, or using the App, you agree to be bound by these Terms and by Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standard License Agreement</a>. If you do not agree, do not use the App.</p>
+      <p>You must be at least 13 years old to use the App. The App is rated 4+ on the App Store.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <h2><span class="num">2</span> Not Medical Advice</h2>
+      <p>Protocol: Rewire is a self-help habit-tracking tool. It is <strong>not a medical device</strong>, does not provide medical advice, diagnosis, or treatment, and is not a substitute for professional medical, psychological, or addiction-counseling care.</p>
+      <p>If you are struggling with substance use, compulsive behavior, or your mental health, please consult a qualified healthcare professional or a local support service. In a crisis, contact emergency services in your country immediately.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+      <h2><span class="num">3</span> Subscriptions &amp; In-App Purchases</h2>
+      <p>The App offers an optional auto-renewing subscription, <strong>Protocol Rewire Pro</strong>, which unlocks premium features. Subscriptions are processed exclusively through Apple's In-App Purchase system and managed via RevenueCat (see our <a href="https://angunsidar.github.io/protocol-rewire/privacy.html">Privacy Policy</a>).</p>
+
+      <div class="plan-card">
+        <div class="name">Protocol Rewire Pro — Monthly &amp; Annual</div>
+        <p>Both plans may include a free trial period (currently 7 days where offered). Exact pricing and trial availability are shown on the in-app paywall and on your device's App Store product page before you confirm purchase, and may vary by region.</p>
+      </div>
+
+      <h3>Auto-Renewal</h3>
+      <ul>
+        <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+        <li>Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period</li>
+        <li>Your account will be charged for renewal within 24 hours prior to the end of the current period, at the same price unless changed beforehand</li>
+        <li>You can manage or cancel your subscription anytime in iOS Settings → [Your Name] → Subscriptions</li>
+        <li>Any unused portion of a free trial is forfeited when you purchase a subscription, where applicable</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+      <h2><span class="num">4</span> Screen Time / App Blocking Feature</h2>
+      <p>The App's optional "Doomscroll Shield" feature uses Apple's Screen Time API to help you restrict access to apps you choose, entirely on your own device. You are solely responsible for the choices you make using this feature. We are not liable for any consequences of enabling, disabling, or configuring app restrictions through this feature.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+      <h2><span class="num">5</span> User Responsibilities</h2>
+      <ul>
+        <li>You agree to use the App only for its intended purpose of personal habit tracking</li>
+        <li>You are responsible for the accuracy of any data you enter</li>
+        <li>You agree not to reverse-engineer, decompile, or attempt to extract the source code of the App, except as permitted by applicable law</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+      <h2><span class="num">6</span> Disclaimer of Warranties &amp; Limitation of Liability</h2>
+      <p>The App is provided "as is" and "as available," without warranties of any kind, express or implied. We do not guarantee the App will be uninterrupted, error-free, or that it will help you achieve any particular outcome.</p>
+      <p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the App, including any relapse, loss of data, or loss arising from reliance on features such as streak tracking or app blocking.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+      <h2><span class="num">7</span> Termination</h2>
+      <p>You may stop using the App at any time by deleting it from your device. We reserve the right to discontinue the App or any of its features at our discretion. Deleting the App permanently removes all locally stored data (see our <a href="https://angunsidar.github.io/protocol-rewire/privacy.html">Privacy Policy</a>).</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+      <h2><span class="num">8</span> Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date above. Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section">
+      <h2><span class="num">9</span> Contact</h2>
+      <div class="contact-box">
+        <p><strong>Sidar Angun</strong></p>
+        <p>Developer of Protocol: Rewire</p>
+        <p style="margin-top:8px;">Email: <a href="mailto:angunsidar@gmail.com">angunsidar@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /lang-en -->
+
+
+  <!-- ============================= TÜRKÇE ============================= -->
+  <div id="lang-tr" class="lang-section">
+
+    <p style="color:#606080; font-size:0.85rem; margin-bottom:28px;">
+      <strong style="color:#a0a0c0;">Son güncellenme:</strong> 30 Haziran 2026
+    </p>
+
+    <div class="highlight-box">
+      <div class="icon">📜</div>
+      <p>
+        <strong>Protocol: Rewire'ı indirerek veya kullanarak bu Kullanım Koşullarını</strong> ve Uygulamanı kullanımını düzenleyen Apple'ın Standart Son Kullanıcı Lisans Sözleşmesi'ni (EULA) kabul etmiş olursun.
+      </p>
+    </div>
+
+    <!-- 1 -->
+    <div class="section">
+      <h2><span class="num">1</span> Koşulların Kabulü</h2>
+      <p>Bu Kullanım Koşulları ("Koşullar"), sen ile <strong>Protocol: Rewire</strong> ("Uygulama") geliştiricisi <strong>Sidar Angun</strong> ("biz") arasında bir anlaşma oluşturur. Uygulamayı indirerek, yükleyerek veya kullanarak bu Koşulları ve Apple'ın <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Standart Lisans Sözleşmesi'ni</a> kabul etmiş olursun. Kabul etmiyorsan Uygulamayı kullanma.</p>
+      <p>Uygulamayı kullanmak için en az 13 yaşında olmalısın. Uygulama App Store'da 4+ yaş derecelendirmesine sahiptir.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <h2><span class="num">2</span> Tıbbi Tavsiye Değildir</h2>
+      <p>Protocol: Rewire kendi kendine yardım amaçlı bir alışkanlık takip aracıdır. <strong>Tıbbi bir cihaz değildir</strong>, tıbbi tavsiye, teşhis veya tedavi sağlamaz ve profesyonel tıbbi, psikolojik veya bağımlılık danışmanlığı hizmetinin yerini tutmaz.</p>
+      <p>Madde kullanımı, kompulsif davranış veya ruh sağlığınla ilgili zorluk yaşıyorsan lütfen nitelikli bir sağlık uzmanına veya yerel bir destek hizmetine başvur. Acil bir durumda derhal ülkendeki acil servislerle iletişime geç.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+      <h2><span class="num">3</span> Abonelikler ve Uygulama İçi Satın Almalar</h2>
+      <p>Uygulama, premium özelliklerin kilidini açan isteğe bağlı otomatik yenilenen bir abonelik olan <strong>Protocol Rewire Pro</strong>'yu sunar. Abonelikler yalnızca Apple'ın Uygulama İçi Satın Alma sistemi üzerinden işlenir ve RevenueCat aracılığıyla yönetilir (bkz. <a href="https://angunsidar.github.io/protocol-rewire/privacy.html">Gizlilik Politikamız</a>).</p>
+
+      <div class="plan-card">
+        <div class="name">Protocol Rewire Pro — Aylık ve Yıllık</div>
+        <p>Her iki plan da sunulduğu yerlerde ücretsiz deneme süresi içerebilir (şu anda 7 gün). Tam fiyatlandırma ve deneme süresi durumu, satın almayı onaylamadan önce uygulama içi paywall'da ve cihazının App Store ürün sayfasında gösterilir ve bölgeye göre değişebilir.</p>
+      </div>
+
+      <h3>Otomatik Yenileme</h3>
+      <ul>
+        <li>Ödeme, satın alma onaylandığında Apple ID hesabından tahsil edilir</li>
+        <li>Mevcut dönemin bitiminden en az 24 saat önce otomatik yenileme kapatılmadığı sürece abonelikler otomatik olarak yenilenir</li>
+        <li>Hesabından, mevcut dönemin bitiminden 24 saat önce, önceden değiştirilmediği sürece aynı fiyattan yenileme için ücret tahsil edilir</li>
+        <li>Aboneliğini istediğin zaman iOS Ayarlar → [Adın] → Abonelikler üzerinden yönetebilir veya iptal edebilirsin</li>
+        <li>Geçerli olduğu durumlarda, abonelik satın aldığında ücretsiz deneme süresinin kullanılmayan kısmı kaybedilir</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+      <h2><span class="num">4</span> Ekran Süresi / Uygulama Engelleme Özelliği</h2>
+      <p>Uygulamanın isteğe bağlı "Doomscroll Shield" özelliği, tamamen kendi cihazında, seçtiğin uygulamalara erişimi kısıtlamana yardımcı olmak için Apple'ın Screen Time API'sini kullanır. Bu özelliği kullanarak yaptığın seçimlerden yalnızca sen sorumlusun. Bu özellik aracılığıyla uygulama kısıtlamalarını etkinleştirmenin, devre dışı bırakmanın veya yapılandırmanın herhangi bir sonucundan sorumlu değiliz.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+      <h2><span class="num">5</span> Kullanıcı Sorumlulukları</h2>
+      <ul>
+        <li>Uygulamayı yalnızca kişisel alışkanlık takibi amacıyla kullanmayı kabul edersin</li>
+        <li>Girdiğin verilerin doğruluğundan sen sorumlusun</li>
+        <li>Geçerli yasaların izin verdiği durumlar dışında, Uygulamanın kaynak kodunu tersine mühendislikle çözmeyeceğini, derlemeyeceğini veya çıkarmaya çalışmayacağını kabul edersin</li>
+      </ul>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+      <h2><span class="num">6</span> Garanti Reddi ve Sorumluluk Sınırlaması</h2>
+      <p>Uygulama, açık veya zımni hiçbir garanti olmaksızın "olduğu gibi" ve "mevcut olduğu şekilde" sunulur. Uygulamanın kesintisiz, hatasız olacağını veya belirli bir sonuca ulaşmana yardımcı olacağını garanti etmiyoruz.</p>
+      <p>Yasaların izin verdiği azami ölçüde, Uygulamayı kullanmandan kaynaklanan dolaylı, arızi veya sonuç olarak ortaya çıkan zararlardan — streak takibi veya uygulama engelleme gibi özelliklere güvenmekten kaynaklanan nüksetme, veri kaybı veya başka bir kayıp dahil — sorumlu değiliz.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+      <h2><span class="num">7</span> Fesih</h2>
+      <p>Uygulamayı cihazından silerek istediğin zaman kullanmayı bırakabilirsin. Uygulamayı veya özelliklerinden herhangi birini kendi takdirimize bağlı olarak durdurma hakkını saklı tutarız. Uygulamayı silmek, yerel olarak saklanan tüm verileri kalıcı olarak kaldırır (bkz. <a href="https://angunsidar.github.io/protocol-rewire/privacy.html">Gizlilik Politikamız</a>).</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+      <h2><span class="num">8</span> Bu Koşullardaki Değişiklikler</h2>
+      <p>Bu Koşulları zaman zaman güncelleyebiliriz. Güncellediğimizde, yukarıdaki "Son güncellenme" tarihini değiştireceğiz. Değişiklikler yürürlüğe girdikten sonra Uygulamayı kullanmaya devam etmen, gözden geçirilmiş Koşulları kabul ettiğin anlamına gelir.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section">
+      <h2><span class="num">9</span> İletişim</h2>
+      <div class="contact-box">
+        <p><strong>Sidar Angun</strong></p>
+        <p>Protocol: Rewire Geliştiricisi</p>
+        <p style="margin-top:8px;">E-posta: <a href="mailto:angunsidar@gmail.com">angunsidar@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div><!-- /lang-tr -->
+
+</div><!-- /container -->
+
+<footer>
+  &copy; 2026 Sidar Angun — Protocol: Rewire
+</footer>
+
+<script>
+  function switchLang(lang, el) {
+    document.querySelectorAll('.lang-section').forEach(function(s) {
+      s.classList.remove('visible');
+    });
+    document.getElementById('lang-' + lang).classList.add('visible');
+    document.querySelectorAll('.lang-switch a').forEach(function(a) {
+      a.classList.remove('active');
+    });
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

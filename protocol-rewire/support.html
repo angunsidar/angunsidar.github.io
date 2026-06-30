@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Protocol: Rewire</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #0d0d0f;
+      color: #e2e2e8;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    header .app-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, #6c63ff, #3ecfcf);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: #a0a0b8;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .lang-switch a {
+      padding: 6px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #c0c0d8;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .lang-switch a:hover,
+    .lang-switch a.active {
+      background: rgba(108, 99, 255, 0.3);
+      border-color: #6c63ff;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    .lang-section { display: none; }
+    .lang-section.visible { display: block; }
+
+    .section {
+      margin-bottom: 28px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .section ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .section ul li {
+      color: #b0b0c8;
+      font-size: 0.95rem;
+      padding: 5px 0 5px 22px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #6c63ff;
+      font-weight: 700;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(62, 207, 207, 0.08), rgba(108, 99, 255, 0.08));
+      border: 1px solid rgba(62, 207, 207, 0.25);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+
+    .contact-box a {
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    .links a {
+      color: #6c63ff;
+      text-decoration: none;
+    }
+
+    .links a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #606080;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 540px) {
+      .section { padding: 20px 16px; }
+      header h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">🔗</div>
+  <h1>Protocol: Rewire</h1>
+  <p>Support / Destek</p>
+  <div class="lang-switch">
+    <a href="#" class="active" onclick="switchLang('en', this); return false;">English</a>
+    <a href="#" onclick="switchLang('tr', this); return false;">Türkçe</a>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- ============================= ENGLISH ============================= -->
+  <div id="lang-en" class="lang-section visible">
+
+    <div class="section">
+      <h2>About Protocol: Rewire</h2>
+      <p>Protocol: Rewire is a private, on-device habit-recovery app that helps you track streaks, moods, urges, and goals while breaking unwanted habits — including an optional Screen Time–based app blocker. No account, no cloud, no ads.</p>
+    </div>
+
+    <div class="section">
+      <h2>Need Help?</h2>
+      <p>If you're running into a bug, have a question about a subscription, or want to request a data deletion, email us directly and we'll get back to you as soon as we can.</p>
+      <div class="contact-box">
+        <p>Email: <a href="mailto:angunsidar@gmail.com">angunsidar@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Common Topics</h2>
+      <ul>
+        <li>Restoring a previous Pro subscription — purchases restore automatically on sign-in to the same Apple ID, or via Settings → Restore Purchases in the App</li>
+        <li>Cancelling a subscription — manage it anytime in iOS Settings → [Your Name] → Subscriptions</li>
+        <li>Enabling or disabling the Doomscroll Shield (Screen Time) feature — found under Settings inside the App</li>
+        <li>Resetting or deleting your local data — Settings → Reset Data inside the App, or simply delete the App</li>
+      </ul>
+    </div>
+
+    <div class="section links">
+      <h2>Legal</h2>
+      <p><a href="https://angunsidar.github.io/protocol-rewire/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://angunsidar.github.io/protocol-rewire/terms.html">Terms of Use</a></p>
+    </div>
+
+  </div><!-- /lang-en -->
+
+  <!-- ============================= TÜRKÇE ============================= -->
+  <div id="lang-tr" class="lang-section">
+
+    <div class="section">
+      <h2>Protocol: Rewire Hakkında</h2>
+      <p>Protocol: Rewire, istenmeyen alışkanlıkları bırakırken streak, ruh hali, istek ve hedeflerini takip etmene yardımcı olan, tamamen cihaz üzerinde çalışan özel bir alışkanlık iyileştirme uygulamasıdır — isteğe bağlı Screen Time tabanlı bir uygulama engelleyici de dahil. Hesap yok, bulut yok, reklam yok.</p>
+    </div>
+
+    <div class="section">
+      <h2>Yardıma mı İhtiyacın Var?</h2>
+      <p>Bir hatayla karşılaştıysan, abonelikle ilgili bir sorun varsa veya veri silme talebinde bulunmak istiyorsan doğrudan e-posta gönder, en kısa sürede sana dönüş yapalım.</p>
+      <div class="contact-box">
+        <p>E-posta: <a href="mailto:angunsidar@gmail.com">angunsidar@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Sık Sorulan Konular</h2>
+      <ul>
+        <li>Önceki Pro aboneliğini geri yükleme — satın almalar aynı Apple ID ile giriş yapıldığında otomatik olarak geri yüklenir, veya Uygulama içinde Ayarlar → Satın Almaları Geri Yükle ile yapılabilir</li>
+        <li>Aboneliği iptal etme — iOS Ayarlar → [Adın] → Abonelikler üzerinden istediğin zaman yönetebilirsin</li>
+        <li>Doomscroll Shield (Screen Time) özelliğini açma/kapatma — Uygulama içinde Ayarlar altında bulunur</li>
+        <li>Yerel verilerini sıfırlama veya silme — Uygulama içinde Ayarlar → Verileri Sıfırla, ya da Uygulamayı silmek yeterli</li>
+      </ul>
+    </div>
+
+    <div class="section links">
+      <h2>Yasal</h2>
+      <p><a href="https://angunsidar.github.io/protocol-rewire/privacy.html">Gizlilik Politikası</a> &nbsp;·&nbsp; <a href="https://angunsidar.github.io/protocol-rewire/terms.html">Kullanım Koşulları</a></p>
+    </div>
+
+  </div><!-- /lang-tr -->
+
+</div><!-- /container -->
+
+<footer>
+  &copy; 2026 Sidar Angun — Protocol: Rewire
+</footer>
+
+<script>
+  function switchLang(lang, el) {
+    document.querySelectorAll('.lang-section').forEach(function(s) {
+      s.classList.remove('visible');
+    });
+    document.getElementById('lang-' + lang).classList.add('visible');
+    document.querySelectorAll('.lang-switch a').forEach(function(a) {
+      a.classList.remove('active');
+    });
+    el.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
